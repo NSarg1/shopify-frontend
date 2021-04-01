@@ -1,3 +1,5 @@
+@use 'src/sass/abstracts/mixins';
+
 .container {
     display: flex;
     list-style: none;
@@ -6,4 +8,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+}
+
+.loaderWrapper {
+    flex: 1;
+    @include mixins.flexCenter;
+    min-height: 50vmin;
 }

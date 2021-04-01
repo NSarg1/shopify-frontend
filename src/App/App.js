@@ -7,6 +7,7 @@ import styles from "./app.module.scss";
 import HomePage from "src/pages/home/Home.page";
 import AuthPage from "src/pages/auth/Auth.page";
 import ShopPage from "src/pages/shop/Shop.page";
+import ShopCategory from "src/pages/shop-category/ShopCategory.component";
 
 const App = () => {
     return (
@@ -16,7 +17,8 @@ const App = () => {
                 <Switch>
                     <Route component={HomePage} path="/home" />
                     <Route component={AuthPage} path="/auth" />
-                    <Route component={ShopPage} path="/shop" />
+                    <Route exact component={ShopPage} path="/shop" />
+                    <Route component={ShopCategory} path="/shop/:category" />
                     <Redirect exact from="/" to="/home" />
                 </Switch>
             </main>
