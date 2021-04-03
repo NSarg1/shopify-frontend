@@ -4,20 +4,19 @@ import ShopItem from "../shop-item/ShopItem.component";
 import classNames from "classnames";
 
 const ShopItems = (props) => {
-    const { category, data, handleShopCategoryClick } = props;
+    const { category, data, appData, handleShopCategoryClick } = props;
 
     const titleClasses = classNames({
         [styles.title]: true,
         "u-cursor--pointer": !!handleShopCategoryClick,
     });
 
-    console.log(styles);
-
     return (
         <div className={styles.container}>
             <h1 className={titleClasses} onClick={handleShopCategoryClick}>
                 {category}
             </h1>
+            {appData.name}
             <div className={styles.list}>
                 {data.map((shopItem) => {
                     return <ShopItem shopItem={shopItem} key={shopItem._id} />;

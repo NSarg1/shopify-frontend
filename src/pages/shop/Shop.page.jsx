@@ -17,7 +17,6 @@ const Shop = ({ history }) => {
     const categories = ["hats", "sneakers", "womens", "mens", "jackets"];
 
     const handleShopCategoryClick = (category) => {
-        console.log(category);
         history.push(`/shop/${category}`);
     };
 
