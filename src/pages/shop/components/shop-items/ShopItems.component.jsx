@@ -11,6 +11,8 @@ const ShopItems = (props) => {
         "u-cursor--pointer": !!handleShopCategoryClick,
     });
 
+    console.log(styles);
+
     return (
         <div className={styles.container}>
             <h1 className={titleClasses} onClick={handleShopCategoryClick}>

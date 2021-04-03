@@ -9,9 +9,3 @@
     flex-wrap: wrap;
     gap: 20px;
 }
-
-.loaderWrapper {
-    flex: 1;
-    @include mixins.flexCenter;
-    min-height: 50vmin;
-}
