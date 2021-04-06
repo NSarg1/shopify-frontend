@@ -1,15 +1,14 @@
+import types from "./common.types";
+
 const INITIAL_STATE = {
-    name: "Karen",
-    age: 10,
-    isProgrammer: false,
+    appIsLoading: false,
 };
 
 const commonReducer = (state = INITIAL_STATE, action) => {
-    switch (action.type) {
-        case "CHANGE_NAME":
-            return { ...state, name: "Narek" };
-        case "CHANGE_AGE":
-            return { ...state, age: 52 };
+    const { type, payload } = action;
+    switch (type) {
+        case types.TOGGLE_APP_LOADER:
+            return { ...state, appIsLoading: payload };
         default:
             return state;
     }
