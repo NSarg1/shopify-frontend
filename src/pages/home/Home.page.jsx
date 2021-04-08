@@ -27,12 +27,10 @@ const Home = (props) => {
         getData();
     }, []);
 
-    const sortedCategories = categories.sort((a, b) => a.id - b.id);
-
     return (
         <WrapperLoader isLoading={isLoading}>
             <ul className={styles.container}>
-                {sortedCategories.map((category) => {
+                {categories.map((category) => {
                     return <CategoryItem key={category._id} category={category} />;
                 })}
             </ul>
