@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 // LAYOUT
 import Header from "src/layout/header/Header.layout";
@@ -8,6 +9,9 @@ import HomePage from "src/pages/home/Home.page";
 import AuthPage from "src/pages/auth/Auth.page";
 
 const App = () => {
+    useEffect(() => {
+        console.log("This is for teaching purposes");
+    }, []);
     return (
         <div className={styles.container}>
             <Header />
