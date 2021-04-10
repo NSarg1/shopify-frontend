@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { connect } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-
 import OutsideClickHandler from "react-outside-click-handler";
 
+// ASSETS
 import { ReactComponent as CrownSVG } from "src/assets/crown.svg";
 import { ReactComponent as BagSVG } from "src/assets/shopping-bag.svg";
-
+// COMPONENTS
+import CartDropdown from "./components/cart-dropdown/CartDropdown.component";
+// STYLES
 import styles from "./header.module.scss";
 
 const Header = (props) => {
-    const { shopItemsCount, shopItems } = props;
+    const { shopItemsCount } = props;
     const history = useHistory();
     const [cartIsOpen, setCartIsOpen] = useState(false);
 
@@ -41,19 +43,7 @@ const Header = (props) => {
                                 <span className={styles.count}>{shopItemsCount}</span>
                             )}
                         </div>
-                        {cartIsOpen && (
-                            <div className={styles.cartDropdown}>
-                                {shopItems.map((shopItem) => {
-                                    console.log(shopItem);
-                                    return (
-                                        <div key={shopItem._id}>
-                                            <div>{shopItem.name}</div>
-                                            <div>{shopItem.count}</div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        )}
+                        {cartIsOpen && <CartDropdown />}
                     </div>
                 </OutsideClickHandler>
             </nav>
@@ -62,7 +52,6 @@ const Header = (props) => {
 };
 
 const mapStateToProps = (store) => ({
-    shopItems: store.shop.favorites,
     shopItemsCount: store.shop.favorites.length,
 });
 
