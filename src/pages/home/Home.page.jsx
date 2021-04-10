@@ -6,30 +6,35 @@ import CategoryItem from "src/pages/home/components/category-item/CategoryItem.c
 // STYLES
 import styles from "./home.module.scss";
 
+import WrapperLoader from "src/components/wrapper-loader/WrapperLoader.component";
+
 const Home = (props) => {
     const [categories, setCategories] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         const getData = async () => {
+            setIsLoading(true);
             try {
                 const response = await axios.get("categories");
                 setCategories(response.data);
             } catch (error) {
                 console.log(error.message);
+            } finally {
+                setIsLoading(false);
             }
         };
         getData();
     }, []);
 
-    const sortedCategories = categories.sort((a, b) => a.id - b.id);
-
-    console.log(props);
     return (
-        <ul className={styles.container}>
-            {sortedCategories.map((category) => {
-                return <CategoryItem key={category._id} category={category} />;
-            })}
-        </ul>
+        <WrapperLoader isLoading={isLoading}>
+            <ul className={styles.container}>
+                {categories.map((category) => {
+                    return <CategoryItem key={category._id} category={category} />;
+                })}
+            </ul>
+        </WrapperLoader>
     );
 };
 

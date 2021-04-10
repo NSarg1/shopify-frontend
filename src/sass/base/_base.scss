@@ -1,5 +1,9 @@
+@use "src/sass/abstracts/mixins";
+@use "src/sass/abstracts/variables";
+
 * {
     box-sizing: border-box;
+    @include mixins.customScrollbar(variables.$color-dark--main);
 }
 
 body {
@@ -10,4 +14,5 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.2;
+    background-color: #fff;
 }
