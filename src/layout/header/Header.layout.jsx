@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import OutsideClickHandler from "react-outside-click-handler";
 
+import countShopItems from "./utils/countShopItems.util";
+
 // ASSETS
 import { ReactComponent as CrownSVG } from "src/assets/crown.svg";
 import { ReactComponent as BagSVG } from "src/assets/shopping-bag.svg";
@@ -52,7 +54,7 @@ const Header = (props) => {
 };
 
 const mapStateToProps = (store) => ({
-    shopItemsCount: store.shop.favorites.length,
+    shopItemsCount: countShopItems(store.shop.favorites),
 });
 
 export default connect(mapStateToProps)(Header);

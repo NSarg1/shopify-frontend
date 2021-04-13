@@ -11,7 +11,6 @@ export const updateFavorites = (favorites, addedItem) => {
         chosenItem.count += 1;
         favoritesCopy[idx] = chosenItem;
 
-        console.log(chosenItem);
         return favoritesCopy;
     } else {
         return [...favorites, { ...addedItem, count: 1 }];

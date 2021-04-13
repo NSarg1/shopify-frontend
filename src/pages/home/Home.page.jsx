@@ -27,6 +27,7 @@ const Home = (props) => {
         getData();
     }, []);
 
+   
     return (
         <WrapperLoader isLoading={isLoading}>
             <ul className={styles.container}>
