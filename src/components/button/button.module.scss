@@ -10,6 +10,12 @@
     transition: 0.3s;
     cursor: pointer;
 
+    &:disabled {
+        pointer-events: none;
+        background-color: white;
+        color: black;
+    }
+
     &:hover {
         background-color: white;
         color: black;
