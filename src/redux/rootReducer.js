@@ -7,16 +7,16 @@ import commonReducer from "./common/common.reducer";
 import shopReducer from "./shop/shop.reducer";
 import authReducer from "./auth/auth.reducer";
 
-export const persistConfig = {
-    key: "root",
+export const authPersistConfig = {
+    key: "auth",
     storage: localStorage,
-    whitelist: ["shop", "auth"],
+    whitelist: ["user"],
 };
 
 const rootReducer = combineReducers({
-    auth: authReducer,
+    auth: persistReducer(authPersistConfig, authReducer),
     common: commonReducer,
     shop: shopReducer,
 });
 
-export default persistReducer(persistConfig, rootReducer);
+export default rootReducer;

@@ -24,8 +24,6 @@ const Header = (props) => {
         history.push("/home");
     };
 
-    console.log(user);
-
     const toggleCartDropdown = () => setCartIsOpen(!cartIsOpen);
 
     const handleSignInSignOutClick = () => {
