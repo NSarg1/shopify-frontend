@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import WrapperLoader from "src/components/wrapper-loader/WrapperLoader.component";
 import { setGlobalErrorMessage } from "src/redux/common/common.actions";
 
-import ShopItems from "../components/shop-items/ShopItems.component";
+import ShopItems from "../shop-items/ShopItems.component";
 
 const ShopCategory = (props) => {
     const dispatch = useDispatch();

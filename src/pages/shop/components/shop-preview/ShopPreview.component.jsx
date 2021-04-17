@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import WrapperLoader from "src/components/wrapper-loader/WrapperLoader.component";
 
 // COMPONENTS
-import ShopItems from "../components/shop-items/ShopItems.component";
+import ShopItems from "../shop-items/ShopItems.component";
 
 import styles from "./shop-preview.module.scss";
 
