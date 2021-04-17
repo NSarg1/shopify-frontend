@@ -1,4 +1,4 @@
-import axios from "src/configs/axios.config";
+import authApi from "./auth.api";
 import types from "./auth.types";
 
 export const clearUserData = () => ({
@@ -23,7 +23,7 @@ const userSignInAsyncFailure = (errorMessage) => ({
 export const userSignInAsync = (userInputData) => async (dispatch) => {
     dispatch(userSignInAsyncStart());
     try {
-        const result = await axios.post("auth/login", userInputData);
+        const result = await authApi.getUser(userInputData);
         const data = result.data.data;
         dispatch(userSignInAsyncSuccess(data));
         return true;
@@ -32,6 +32,5 @@ export const userSignInAsync = (userInputData) => async (dispatch) => {
         return false;
     }
 };
-
 
 //* USER SIGN UP

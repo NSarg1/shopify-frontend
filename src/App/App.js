@@ -8,7 +8,6 @@ import styles from "./app.module.scss";
 import HomePage from "src/pages/home/Home.page";
 import AuthPage from "src/pages/auth/Auth.page";
 import ShopPage from "src/pages/shop/Shop.page";
-import ShopCategory from "src/pages/shop-category/ShopCategory.component";
 
 import Oops from "src/components/oops/Oops.component";
 
@@ -17,7 +16,6 @@ import Oops from "src/components/oops/Oops.component";
 const App = (props) => {
     const { globalErrorMessage } = props;
 
-    
     return (
         <div className={styles.container}>
             <Header />
@@ -26,8 +24,7 @@ const App = (props) => {
                     <Switch>
                         <Route component={HomePage} path="/home" />
                         <Route component={AuthPage} path="/auth" />
-                        <Route component={ShopPage} exact path="/shop" />
-                        <Route component={ShopCategory} path="/shop/:category" />
+                        <Route component={ShopPage} path="/shop" />
                         <Redirect exact from="/" to="/home" />
                     </Switch>
                 </Oops>

@@ -11,8 +11,10 @@ const authReducer = (state = INITIAL_STATE, action) => {
     switch (type) {
         case types.USER_SIGNIN_ASYNC_START:
             return { ...state, isLoading: true };
+
         case types.USER_SIGNIN_ASYNC_SUCCESS:
             return { ...state, user: payload, isLoading: false };
+            
         case types.USER_SIGNIN_ASYNC_FAILURE:
             return { ...state, errorMessage: payload, isLoading: false };
 
