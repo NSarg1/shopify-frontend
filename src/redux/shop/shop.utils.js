@@ -31,3 +31,9 @@ export const decreaseFavoritesItemCount = (favorites, selectedItem) => {
         return favoritesCopy;
     }
 };
+export const deleteFromFavorites = (favorites, selectedItem) => {
+    const favoritesCopy = [...favorites];
+    const idx = favoritesCopy.findIndex((favoriteItem) => favoriteItem.id === selectedItem.id);
+    favoritesCopy.splice(idx, 1);
+    return favoritesCopy;
+};
