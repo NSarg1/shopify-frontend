@@ -4,6 +4,7 @@ import styles from "./checkout.module.scss";
 import Button from "src/components/button/Button.component";
 
 import totalPrice from "./utils/totalPrice";
+import EmptyDataMessage from "src/components/empty-data-message/EmptyDataMessage.component";
 
 const Checkout = () => {
     const favorites = useSelector((state) => state.shop.favorites);

@@ -9,6 +9,7 @@ import HomePage from "src/pages/home/Home.page";
 import AuthPage from "src/pages/auth/Auth.page";
 import ShopPage from "src/pages/shop/Shop.page";
 import CheckOutPage from "src/pages/checkout/Checkout.page";
+import ContactsPage from "src/pages/contacts/Contacts.page";
 
 import Oops from "src/components/oops/Oops.component";
 import { useEffect } from "react";
@@ -22,7 +23,7 @@ const App = (props) => {
 
     useEffect(() => {
         dispatch(getCategoriesAsync());
-    }, []);
+    }, [dispatch]);
 
     return (
         <div className={styles.container}>
@@ -35,6 +36,7 @@ const App = (props) => {
                             <Route component={AuthPage} path="/auth" />
                             <Route component={ShopPage} path="/shop" />
                             <Route component={CheckOutPage} path="/checkout" />
+                            <Route component={ContactsPage} path="/contacts" />
                             <Redirect exact from="/" to="/home" />
                         </Switch>
                     </Oops>

@@ -1,5 +1,4 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
@@ -18,7 +17,7 @@ const Shop = ({ history }) => {
 
     useEffect(() => {
         dispatch(getShopDataAsync());
-    }, []);
+    }, [dispatch]);
 
     const categoriesList = categories.map((category) => category.routeName);
 
