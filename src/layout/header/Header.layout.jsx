@@ -3,8 +3,6 @@ import { connect } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import OutsideClickHandler from "react-outside-click-handler";
 
-import countShopItems from "./utils/countShopItems.util";
-
 // ASSETS
 import { ReactComponent as CrownSVG } from "src/assets/crown.svg";
 import { ReactComponent as BagSVG } from "src/assets/shopping-bag.svg";
@@ -12,6 +10,9 @@ import { ReactComponent as BagSVG } from "src/assets/shopping-bag.svg";
 import CartDropdown from "./components/cart-dropdown/CartDropdown.component";
 // ACTIONS
 import { clearUserData } from "src/redux/auth/auth.actions";
+// SELECTORS
+import { selectShopItemsCount } from "src/redux/shop/shop.selectors";
+import { selectUser } from "src/redux/auth/auth.selectors";
 // STYLES
 import styles from "./header.module.scss";
 
@@ -63,8 +64,8 @@ const Header = (props) => {
 };
 
 const mapStateToProps = (store) => ({
-    shopItemsCount: countShopItems(store.shop.favorites),
-    user: store.auth.user,
+    shopItemsCount: selectShopItemsCount(store),
+    user: selectUser(store),
 });
 
 const mapDispatchToProps = { clearUserData };

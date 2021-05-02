@@ -5,9 +5,10 @@ import Button from "src/components/button/Button.component";
 
 import totalPrice from "./utils/totalPrice";
 import EmptyDataMessage from "src/components/empty-data-message/EmptyDataMessage.component";
+import { selectFavorites } from "src/redux/shop/shop.selectors";
 
 const Checkout = () => {
-    const favorites = useSelector((state) => state.shop.favorites);
+    const favorites = useSelector(selectFavorites);
 
     return (
         <div className={styles.container}>

@@ -1,6 +1,7 @@
 // COMPONENTS
 import { useSelector } from "react-redux";
 import CategoryItem from "src/pages/home/components/category-item/CategoryItem.component";
+import { selectShop } from "src/redux/shop/shop.selectors";
 
 // STYLES
 import styles from "./home.module.scss";
@@ -8,7 +9,7 @@ import styles from "./home.module.scss";
 import WrapperLoader from "src/components/wrapper-loader/WrapperLoader.component";
 
 const Home = (props) => {
-    const { isLoading, categories } = useSelector((store) => store.shop);
+    const { isLoading, categories } = useSelector(selectShop);
     return (
         <WrapperLoader isLoading={isLoading}>
             <ul className={styles.container}>

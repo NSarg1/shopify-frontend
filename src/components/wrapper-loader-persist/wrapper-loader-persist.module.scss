@@ -1,0 +1,11 @@
+@use 'src/sass/abstracts/mixins';
+
+.notVisible {
+    display: none;
+}
+
+.container {
+    flex: 1;
+    @include mixins.flexCenter;
+    min-height: 50vmin;
+}

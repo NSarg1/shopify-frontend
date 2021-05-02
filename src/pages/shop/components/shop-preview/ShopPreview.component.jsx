@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 // BASE COMPONENTS
 import WrapperLoader from "src/components/wrapper-loader/WrapperLoader.component";
 import { getShopDataAsync } from "src/redux/shop/shop.actions";
+import { selectShop } from "src/redux/shop/shop.selectors";
 
 // COMPONENTS
 import ShopItems from "../shop-items/ShopItems.component";
@@ -13,7 +14,7 @@ import styles from "./shop-preview.module.scss";
 
 const Shop = ({ history }) => {
     const dispatch = useDispatch();
-    const { categories, isLoading, shopIsLoading, shopData } = useSelector((store) => store.shop);
+    const { categories, isLoading, shopIsLoading, shopData } = useSelector(selectShop);
 
     useEffect(() => {
         dispatch(getShopDataAsync());
